@@ -112,15 +112,27 @@ variable "ec2_scale_down_cool_down" {
 }
 
 variable "ec2_scale_down_adjustment" {
-  description = "Number of EC2 instances to scale down by at a time. Positive numbers will be converted to negative."
+  description = "Number to scale down by at a time. Positive numbers will be converted to negative."
   type        = "string"
   default     = "-1"
 }
 
+variable "ec2_scale_down_adjustment_type" {
+  description = "The type if scaling adjustment to use"
+  type        = "string"
+  default     = "ChangeInCapacity"
+}
+
 variable "ec2_scale_up_adjustment" {
-  description = "Number of EC2 instances to scale up by at a time."
+  description = "Number to scale up by at a time."
   type        = "string"
   default     = "1"
+}
+
+variable "ec2_scale_up_adjustment_type" {
+  description = "The type if scaling adjustment to use"
+  type        = "string"
+  default     = "ChangeInCapacity"
 }
 
 variable "ec2_scale_up_cool_down" {
